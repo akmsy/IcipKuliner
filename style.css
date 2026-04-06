@@ -86,3 +86,7 @@ footer h6 {
     color: #A23F00;
     letter-spacing: 0.08em;
 }
+
+body h6 {
+    letter-spacing: 0.08em;
+}

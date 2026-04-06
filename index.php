@@ -16,7 +16,7 @@
         <div class="d-flex flex-column align-items-start">
             <h6>WARISAN NUSANTARA</h6>
             <h1 class="fw-bold">Cari Kuliner Terdekat di Daerahmu</h1>
-            <p>Jelajahi cita rasa warisan Nusantara yang tersembunyi di setiap sudut daerah. Temuka resep keluarga dan hidangan otentik dari segala daerah.</p>
+            <p>Jelajahi cita rasa warisan Nusantara yang tersembunyi di setiap sudut daerah. Temukan resep keluarga dan hidangan otentik dari segala penjuru daerah.</p>
         </div>
         
         <?php
