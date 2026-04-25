@@ -4,7 +4,7 @@
 }
 
 .btn-outline-orange {
-    border-color: #A23F00;
+    border: 1px solid #A23F00;
     color: #A23F00;
 }
 
@@ -16,12 +16,13 @@
 
 .btn-orange {
     background-color: #A23F00;
-    color: white;
+    color: #fff;
+    border: none;
 }
 
 .btn-orange:hover {
     background-color: #A23F00;
-    color: white;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -43,6 +44,25 @@
 .custom-card img {
     width: 100%;
     border-radius: 6px;
+}
+
+.card-img-top {
+    height: 220px;  
+    width: 100%;
+    object-fit: cover;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;            
+}
+
+.card-body p {
+    min-height: 60px;
 }
 
 .back {
@@ -68,6 +88,7 @@
     position: absolute;
     z-index: 3;
     right: -90px;
+    top: 50px;
     background: #D9EAA3;
     padding: 20px 16px;
     border-radius: 14px;
@@ -78,8 +99,12 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-footer {
-    background-color: #dce9f0;
+body h6 {
+    letter-spacing: 0.08em;
+}
+
+footer, .bg-birumuda {
+    background-color: #f0faffef;
 }
 
 footer h6 {
@@ -87,6 +112,37 @@ footer h6 {
     letter-spacing: 0.08em;
 }
 
-body h6 {
-    letter-spacing: 0.08em;
+.cta-box {
+    background: linear-gradient(135deg, #a84300, #d95f02);
+    border-radius: 25px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.cta-box:hover {
+    transform: scale(1.02);
+}
+
+.cta-text {
+    max-width: 500px;
+}
+
+.cta-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    width: 250px;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: -10px;
+    border: 2px solid brown;
+}
+
+body .btn-light {
+    border-radius: 50px;
+    padding: 10px 20px;
 }
