@@ -126,6 +126,39 @@
             </div>
         </section>
 
+        <section class="py-5">
+            <div class="container">
+                <aside class="cta-box p-5 d-flex justify-content-between align-items-center flex-wrap">
+
+                    <div class="cta-text">
+                        <h2 class="fw-bold">Bagikan<br>Rekomendasi Anda</h2>
+                        <p class="mt-3">
+                            Punya hidden gem kuliner yang layak dikenal? Yuk bagikan ke komunitas
+                            dan bantu lestarikan warisan kuliner Nusantara.
+                        </p>
+                        <a href="#" class="btn btn-light mt-3">
+                            Submit Spot <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="cta-card p-4 mt-4 mt-md-0">
+                        <small><i class="bi bi-shield-check"></i> Community Trusted</small>
+                        <p class="mt-2 mb-3">
+                            Setiap kontribusi akan direview oleh tim kurator untuk menjaga kualitas.
+                        </p>
+
+                        <div class="d-flex align-items-center">
+                            <img src="img/user1.jpg" class="avatar">
+                            <img src="img/user2.jpg" class="avatar">
+                            <img src="img/user3.jpg" class="avatar">
+                            <span class="ms-2">+2k</span>
+                        </div>
+                    </div>
+
+                </aside>
+            </div>
+        </section>
+        
     <!-- Footer -->
     <footer>
         <?php include 'footer.php'; ?>
