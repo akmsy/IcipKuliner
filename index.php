@@ -129,8 +129,8 @@
                 <aside class="cta-box p-5 d-flex justify-content-between align-items-center flex-wrap">
 
                     <div class="cta-text">
-                        <h2 class="fw-bold">Bagikan<br>Rekomendasi Anda</h2>
-                        <p class="mt-3">
+                        <h2 class="fw-bold text-white">Bagikan<br>Rekomendasi Anda</h2>
+                        <p class="mt-3 text-white">
                             Punya hidden gem kuliner yang layak dikenal? Yuk bagikan ke komunitas
                             dan bantu lestarikan warisan kuliner Nusantara.
                         </p>
@@ -139,7 +139,7 @@
                         </a>
                     </div>
 
-                    <div class="cta-card p-4 mt-4 mt-md-0">
+                    <div class="cta-card p-4 mt-4 mt-md-0 text-white">
                         <small><i class="bi bi-shield-check"></i> Community Trusted</small>
                         <p class="mt-2 mb-3">
                             Setiap kontribusi akan direview oleh tim kurator untuk menjaga kualitas.
