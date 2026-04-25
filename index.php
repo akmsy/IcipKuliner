@@ -57,6 +57,75 @@
 
     </main>
 
+            <section class="py-5 bg-light">
+            <div class="container">
+
+                <header class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                        <p class="text-uppercase text-muted mb-1">Regional Spotlight</p>
+                        <h2 class="fw-bold">Top Kuliner di Yogyakarta</h2>
+                    </div>
+                    <nav>
+                        <a href="#" class="text-decoration-none">
+                            Lihat semua <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </nav>
+                </header>
+
+                <div class="row g-4">
+
+                    <article class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="img/gudeg.jpg" class="card-img-top" alt="Gudeg Yu Djum">
+                            <div class="card-body">
+                                <small class="text-muted">KRATON</small>
+                                <h5 class="fw-bold">Gudeg Yu Djum <span class="text-warning">⭐ 4.9</span></h5>
+                                <p class="text-muted">
+                                    Gudeg legendaris khas Jogja yang dimasak dengan kayu bakar sejak 1950.
+                                </p>
+                                <small class="text-muted">
+                                    <i class="bi bi-clock"></i> 15 menit &nbsp; | &nbsp; 💲 $$
+                                </small>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="img/bakpia.jpg" class="card-img-top" alt="Bakpia Pathok 25">
+                            <div class="card-body">
+                                <small class="text-muted">PATHUK</small>
+                                <h5 class="fw-bold">Bakpia Pathok 25 <span class="text-warning">⭐ 4.7</span></h5>
+                                <p class="text-muted">
+                                    Bakpia isi kacang hijau yang lembut dan selalu fresh setiap hari.
+                                </p>
+                                <small class="text-muted">
+                                    <i class="bi bi-bag"></i> Oleh-oleh &nbsp; | &nbsp; 💲 $
+                                </small>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <img src="img/pecel.jpg" class="card-img-top" alt="Pecel Mbah Lindu">
+                            <div class="card-body">
+                                <small class="text-muted">BANTUL</small>
+                                <h5 class="fw-bold">Pecel Mbah Lindu <span class="text-warning">⭐ 4.8</span></h5>
+                                <p class="text-muted">
+                                    Pecel legendaris dengan bumbu kacang khas yang diwariskan turun-temurun.
+                                </p>
+                                <small class="text-muted">
+                                    <i class="bi bi-heart"></i> Sehat &nbsp; | &nbsp; 💲 $
+                                </small>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
     <!-- Footer -->
     <footer>
         <?php include 'footer.php'; ?>
