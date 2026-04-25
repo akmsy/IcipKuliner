@@ -55,7 +55,7 @@
             </div>
         </section>
         
-        <section class="py-5 bg-light">
+        <section class="py-5 bg-birumuda">
             <div class="container">
                 
                 <header class="d-flex justify-content-between align-items-center mb-4">
@@ -82,7 +82,7 @@
                                     Gudeg legendaris khas Jogja yang dimasak dengan kayu bakar sejak 1950.
                                 </p>
                                 <small class="text-muted">
-                                    <i class="bi bi-clock"></i> 15 menit &nbsp; | &nbsp; 💲 $$
+                                    <i class="bi bi-clock"></i> 15 menit &nbsp; | &nbsp; Rp. 25.000–50.000
                                 </small>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                     Bakpia isi kacang hijau yang lembut dan selalu fresh setiap hari.
                                 </p>
                                 <small class="text-muted">
-                                    <i class="bi bi-bag"></i> Oleh-oleh &nbsp; | &nbsp; 💲 $
+                                    <i class="bi bi-bag"></i> Oleh-oleh &nbsp; | &nbsp; Rp. 25.000–50.000
                                 </small>
                             </div>
                         </div>
@@ -114,7 +114,7 @@
                                     Pecel legendaris dengan bumbu kacang khas yang diwariskan turun-temurun.
                                 </p>
                                 <small class="text-muted">
-                                    <i class="bi bi-heart"></i> Sehat &nbsp; | &nbsp; 💲 $
+                                    <i class="bi bi-heart"></i> Sehat &nbsp; | &nbsp; Rp. 25.000–50.000
                                 </small>
                             </div>
                         </div>
