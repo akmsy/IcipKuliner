@@ -32,18 +32,20 @@
                 <figure class="col-md-6 d-flex justify-content-center">
                     <div class="card-wrapper">
 
-                        <?php
-                            $images = [
-                                "img/kuliner.jpg",
-                                "img/petakuliner.jpg"
-                            ];
-                        ?>
+                        <div class="image-stack">
+                            <?php
+                                $images = [
+                                    "img/kuliner.jpg",
+                                    "img/petakuliner.jpg"
+                                ];
+                            ?>
 
-                        <?php foreach ($images as $index => $img): ?>
-                            <div class="custom-card <?php echo $index === 0 ? 'back' : 'front'; ?>">
-                                <img src="<?php echo $img; ?>" alt="Kuliner Nusantara">
-                            </div>
-                        <?php endforeach; ?>
+                            <?php foreach ($images as $index => $img): ?>
+                                <div class="custom-card <?php echo $index === 0 ? 'back' : 'front'; ?>">
+                                    <img src="<?php echo $img; ?>" alt="Kuliner Nusantara">
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
 
                         <figcaption class="bubble">
                             "Jiwa suatu daerah terletak pada rempah-rempahnya"
