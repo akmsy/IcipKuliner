@@ -54,12 +54,10 @@
 
             </div>
         </section>
-
-    </main>
-
-            <section class="py-5 bg-light">
+        
+        <section class="py-5 bg-light">
             <div class="container">
-
+                
                 <header class="d-flex justify-content-between align-items-center mb-4">
                     <div>
                         <p class="text-uppercase text-muted mb-1">Regional Spotlight</p>
@@ -159,6 +157,8 @@
             </div>
         </section>
         
+    </main>
+
     <!-- Footer -->
     <footer>
         <?php include 'footer.php'; ?>
