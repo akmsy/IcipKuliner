@@ -9,6 +9,7 @@
     $user = mysqli_fetch_assoc($query);
 
     if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['username'] = $user['username'];
         $_SESSION['logged_in'] = true;
