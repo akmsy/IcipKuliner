@@ -141,7 +141,7 @@
                                 <h5>Gudeg Yu Djum</h5>
                                 <span class="rating-box">★ 4.8</span>
                             </div>
-                            <p class="price">IDR 35,000 - 80,000</p>
+                            <p class="price">Rp. 25.000–50.000</p>
                             <p class="location">📍 Jl. Wijilan No.167, Kraton</p>
                         </div>
                     </div>
@@ -155,7 +155,7 @@
                                 <h5>Kopi Jos Lik Man</h5>
                                 <span class="rating-box">★ 4.7</span>
                             </div>
-                            <p class="price">IDR 5,000 - 20,000</p>
+                            <p class="price">Rp. 5.000–20.000</p>
                             <p class="location">📍 Wirobrajan, Gedong Tengen</p>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                                 <h5>Sate Klatak Pak Bari</h5>
                                 <span class="rating-box">★ 4.8</span>
                             </div>
-                            <p class="price">IDR 25,000 - 50,000</p>
+                            <p class="price">Rp. 25.000–50.000</p>
                             <p class="location">📍 Pasar Wonokromo, Bantul</p>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                                 <h5>Bakpia Pathok 25</h5>
                                 <span class="rating-box">★ 4.6</span>
                             </div>
-                            <p class="price">IDR 30,000 - 60,000</p>
+                            <p class="price">Rp. 30.000–60.000</p>
                             <p class="location">📍 Suryodiningratan NS4, Pathok</p>
                         </div>
                     </div>
