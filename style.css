@@ -789,3 +789,18 @@ body {
 .submit-btn:hover {
   background: #994b00;
 }
+
+.nav-link {
+    color: black;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: brown !important;
+}
+
+.active-link {
+    color: brown !important;
+    font-weight: bold;
+    border-bottom: 2px solid brown;
+}

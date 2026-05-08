@@ -1,9 +1,10 @@
 <?php 
-if(session_status() == PHP_SESSION_NONE){
-    session_start();
-}
+    include 'koneksi.php';
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
 
-include 'koneksi.php';
+    $currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 
 <nav class="navbar bg-body-light shadow-sm">
@@ -15,9 +16,18 @@ include 'koneksi.php';
         </div>
 
         <div class="d-flex">
-            <a href="index.php" class="nav-link me-3">Home</a>
-            <a href="explore.php" class="nav-link me-3">Explore</a>
-            <a href="contribute.php" class="nav-link">Contribute</a>
+            <a href="index.php" class="nav-link me-3 
+                <?= ($currentPage == 'index.php') ? 'active-link' : '' ?>">
+                Home
+            </a>
+            <a href="explore.php" class="nav-link me-3 
+                <?= ($currentPage == 'explore.php') ? 'active-link' : '' ?>">
+                Explore
+            </a>
+            <a href="contribute.php" class="nav-link me-3 
+                <?= ($currentPage == 'contribute.php') ? 'active-link' : '' ?>">
+                Contribute
+            </a>
         </div>
 
         <div class="d-flex align-items-center">

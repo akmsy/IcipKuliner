@@ -5,9 +5,9 @@
         exit();
     }
 
-    // $page = isset($_GET['page'])? $_GET['page']: 1;
-    // $limit = 2;
-    // $start = ($page - 1) * $limit;
+    $page = isset($_GET['page'])? $_GET['page']: 1;
+    $limit = 2;
+    $start = ($page - 1) * $limit;
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
-    <title>contribute</title>
+    <title>Contribute</title>
 </head>
 
 <body>
