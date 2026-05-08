@@ -13,7 +13,7 @@
         $_SESSION['id'] = $user['id'];
         $_SESSION['email'] = $user['email'];
         $_SESSION['username'] = $user['username'];
-         $_SESSION['logged_in'] = true;
+        $_SESSION['logged_in'] = true;
         header("location: index.php");
     } else {
         $_SESSION['login_error'] = "Email atau password salah";

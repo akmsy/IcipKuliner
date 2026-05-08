@@ -1,14 +1,13 @@
 <?php
-    include 'navbar.php';
-
+    session_start();
     if(!isset($_SESSION['logged_in'])){
         header("location: login.php");
         exit();
     }
 
-    $page = isset($_GET['page'])? $_GET['page']: 1;
-    $limit = 2;
-    $start = ($page - 1) * $limit;
+    // $page = isset($_GET['page'])? $_GET['page']: 1;
+    // $limit = 2;
+    // $start = ($page - 1) * $limit;
 ?>
 
 <!DOCTYPE html>
@@ -23,6 +22,10 @@
 </head>
 
 <body>
+    <header>
+        <?php include 'navbar.php'; ?>
+    </header>
+
     <!-- Main -->
     <main class="dashboard-container">
 
