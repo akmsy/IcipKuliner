@@ -4,9 +4,9 @@
 
     $email = $_POST['email'];
     $username = $_POST['username'];
-    $password_input = $_POST['password'];
+    $password = $_POST['password'];
 
-    if (empty($email) || empty($username) || empty($password_input)) {
+    if (empty($email) || empty($username) || empty($password)) {
         $_SESSION['error'] = "Semua field wajib diisi!";
         header("location: register.php");
         exit();
@@ -20,15 +20,12 @@
         exit();
     }
 
-    $password = password_hash($password_input, PASSWORD_DEFAULT);
+    // $password = password_hash($password_input, PASSWORD_DEFAULT);
 
     $query = "INSERT INTO users (email, username, password) VALUES ('$email', '$username','$password')";
     $result = mysqli_query($koneksi, $query);
 
     if($result){
-        $_SESSION['email'] = $email;
-        $_SESSION['username'] = $username;
-        $_SESSION['logged_in'] = true;
         header('location: index.php');
         exit();
     } else {

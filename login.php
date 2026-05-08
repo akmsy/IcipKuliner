@@ -17,62 +17,62 @@
     <main>
         <section class="login-section d-flex align-items-center justify-content-center">
         
-    <div class="login-card">
-        <p class="small-title">WELCOME BACK</p>
-        <h2 class="fw-bold">Sign In</h2>
-        <p class="desc">
-            Return to your curated collection of regional heritage
-            and culinary stories.
-        </p>
+        <div class="login-card">
+            <p class="small-title">WELCOME BACK</p>
+            <h2 class="fw-bold">Sign In</h2>
+            <p class="desc">
+                Return to your curated collection of regional heritage
+                and culinary stories.
+            </p>
 
-        <!-- Form -->
-        <form action="proses_login.php" method="POST">
-            <label>Email Address</label>
-            <input type="email"
-                   name="email"
-                   class="form-control custom-input"
-                   placeholder="chef@editorial.com"
-                   required>
+            <!-- Form -->
+            <form action="proses_login.php" method="POST">
+                <label>Email Address</label>
+                <input type="email"
+                    name="email"
+                    class="form-control custom-input"
+                    placeholder="chef@editorial.com"
+                    required>
 
-            <div class="d-flex justify-content-between mt-3">
-                <label>Password</label>
-                <small class="forgot">Forgot password?</small>
+                <div class="d-flex justify-content-between mt-3">
+                    <label>Password</label>
+                    <small class="forgot">Forgot password?</small>
+                </div>
+
+                <input type="password"
+                    name="password"
+                    class="form-control custom-input"
+                    placeholder="********"
+                    required>
+
+                <div class="form-check mt-3">
+                    <input class="form-check-input"
+                        type="checkbox">
+                    <label class="form-check-label">Keep me logged in</label>
+                </div>
+
+                <button type="submit" class="btn login-btn w-100 mt-4">
+                    Login →
+                </button>
+
+            </form>
+
+            <!-- Connect -->
+            <p class="or-text">OR CONNECT WITH</p>
+
+            <div class="d-flex gap-3">
+                <button class="btn social-btn w-50">
+                    Google
+                </button>
+                <button class="btn social-btn w-50">
+                    Apple
+                </button>
             </div>
 
-            <input type="password"
-                   name="password"
-                   class="form-control custom-input"
-                   placeholder="********"
-                   required>
-
-            <div class="form-check mt-3">
-                <input class="form-check-input"
-                       type="checkbox">
-                <label class="form-check-label">Keep me logged in</label>
-            </div>
-
-            <button type="submit" class="btn login-btn w-100 mt-4">
-                Login →
-            </button>
-
-        </form>
-
-        <!-- Connect -->
-        <p class="or-text">OR CONNECT WITH</p>
-
-        <div class="d-flex gap-3">
-            <button class="btn social-btn w-50">
-                Google
-            </button>
-            <button class="btn social-btn w-50">
-                Apple
-            </button>
+            <p class="register-text">Don't have an account?
+                <a href="register.php">Register now</a>
+            </p>
         </div>
-
-        <p class="register-text">Don't have an account?
-            <a href="register.php">Register now</a>
-        </p>
-    </div>
 
         </section>
 
