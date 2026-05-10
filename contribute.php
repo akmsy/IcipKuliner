@@ -45,33 +45,6 @@
         </div>
     </section>
 
-    <!-- Stats -->
-    <section class="stats-section">
-
-        <div class="stats-card">
-            <p class="stats-title">Total Spots</p>
-            <h2>24</h2>
-        </div>
-        
-        <div class="stats-card">
-            <p class="stats-title">Published</p>
-            <div class="live-row">
-                <h2 class="green-number">18</h2>
-                <span class="live-badge">LIVE</span>
-            </div>
-        </div>
-        
-        <div class="stats-card">
-            <p class="stats-title">Pending Review</p>
-            <h2 class="orange-number">6</h2>
-        </div>
-
-        <div class="stats-card">
-            <p class="stats-title">Total Views</p>
-            <h2>12.4k</h2>
-        </div>
-    </section>
-
     <!-- Table -->
     <?php
     $query = mysqli_query($koneksi, "SELECT * FROM contributions LIMIT $start, $limit");
