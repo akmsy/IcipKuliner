@@ -73,7 +73,6 @@
                 <img src="upload/<?php echo $data['image']; ?>" class="spot-img">
                 <div>
                     <h5><?php echo $data['place']; ?></h5>
-                    <p><?php echo $data['description']; ?></p>
                 </div>
             </div>
             
@@ -125,14 +124,6 @@
                 class="form-control custom-input"
                 placeholder="e.g. Warung Nasi Campur Bu Made"
                 required>
-            </div>
-            
-            <div class="mb-4">
-                <label class="form-label custom-label">DESCRIPTION</label>
-                <textarea
-                name="description"
-                class="form-control custom-textarea"
-                placeholder="Ceritakan sejarah dan keunikan menu di tempat ini..." required></textarea>
             </div>
             
             <div class="row">
