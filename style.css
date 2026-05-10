@@ -526,7 +526,7 @@ body {
 
 .table-header {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr 1fr 0.8fr;
+  grid-template-columns: 1.8fr 1.4fr 1fr 1fr 0.8fr;
   padding: 30px 35px;
   background: #d6e1ea;
   font-size: 15px;
@@ -536,7 +536,7 @@ body {
 
 .table-row {
   display: grid;
-  grid-template-columns: 2fr 1.5fr 1fr 1fr 0.8fr;
+  grid-template-columns: 1.5fr 1.2fr 1fr 1fr 0.5fr;
   align-items: center;
   padding: 20px 25px;
   background: #eef4f9;
@@ -546,7 +546,7 @@ body {
 .spot-info {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 }
 
 .spot-img {
@@ -562,11 +562,6 @@ body {
   margin-bottom: 2px;
 }
 
-.spot-info p {
-  color: #666;
-  font-size: 14px;
-}
-
 .location-text {
   color: #555;
   font-size: 14px;
@@ -579,6 +574,8 @@ body {
   border-radius: 20px;
   font-size: 14px;
   font-weight: bold;
+  align-items: center;
+  display: inline-block;
 }
 
 .gray-badge {
