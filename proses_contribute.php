@@ -15,8 +15,8 @@
 
     move_uploaded_file($tmp, "upload/" . $image);
 
-    $query = "INSERT INTO contributions ( place, description, category, province, city, district, 
-    image, review, user_id ) VALUES ( '$place', '$description', '$category', '$province', '$city',
+    $query = "INSERT INTO contributions ( place, category, province, city, district, 
+    image, review, user_id ) VALUES ( '$place', '$category', '$province', '$city',
     '$district', '$image', '$review', '$user_id' )"; 
     $result = mysqli_query($koneksi, $query); 
     
