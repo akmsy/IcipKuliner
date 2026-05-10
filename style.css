@@ -489,14 +489,14 @@ body {
 }
 
 .header-left h1 {
-  font-size: 65px;
+  font-size: 55px;
   font-weight: bold;
   color: #0f1720;
   margin-bottom: 20px;
 }
 
 .header-desc {
-  font-size: 28px;
+  font-size: 20px;
   color: #666;
   line-height: 1.6;
   width: 700px;
@@ -506,65 +506,15 @@ body {
   background: #b85c00;
   color: white;
   border: none;
-  padding: 20px 40px;
+  padding: 15px 20px;
   border-radius: 50px;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .add-btn:hover {
   background: #994b00;
-}
-
-.stats-section {
-  display: flex;
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.stats-card {
-  background: white;
-  border-radius: 18px;
-  padding: 35px;
-  flex: 1;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-}
-
-.stats-title {
-  color: #666;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.stats-card h2 {
-  font-size: 60px;
-  font-weight: bold;
-  color: #0f1720;
-}
-
-.live-row {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.live-badge {
-  background: #d7e7a5;
-  color: #667b1f;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.green-number {
-  color: #667b1f !important;
-}
-
-.orange-number {
-  color: #b85c00 !important;
 }
 
 .table-section {
@@ -588,7 +538,7 @@ body {
   display: grid;
   grid-template-columns: 2fr 1.5fr 1fr 1fr 0.8fr;
   align-items: center;
-  padding: 35px;
+  padding: 20px 25px;
   background: #eef4f9;
   border-top: 1px solid #dde5ec;
 }
@@ -596,7 +546,7 @@ body {
 .spot-info {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 14px;
 }
 
 .spot-img {
@@ -607,19 +557,19 @@ body {
 }
 
 .spot-info h5 {
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 2px;
 }
 
 .spot-info p {
   color: #666;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .location-text {
   color: #555;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .category-badge {
@@ -639,26 +589,26 @@ body {
 .status-green {
   color: #667b1f;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .status-orange {
   color: #b85c00;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .table-page {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 35px;
+  padding: 18px 25px;
   background: #dfe8ef;
 }
 
 .table-page p {
   color: #666;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
 }
 
@@ -791,16 +741,16 @@ body {
 }
 
 .nav-link {
-    color: black;
-    transition: 0.3s;
+  color: black;
+  transition: 0.3s;
 }
 
 .nav-link:hover {
-    color: brown !important;
+  color: brown !important;
 }
 
 .active-link {
-    color: brown !important;
-    font-weight: bold;
-    border-bottom: 2px solid brown;
+  color: brown !important;
+  font-weight: bold;
+  border-bottom: 2px solid brown;
 }
