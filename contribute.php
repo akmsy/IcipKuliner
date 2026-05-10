@@ -61,7 +61,7 @@
             <p>NAME OF SPOT</p>
             <p>LOCATION</p>
             <p>CATEGORY</p>
-            <p>STATUS</p>
+            <p>REVIEW</p>
             <p>ACTIONS</p>
         </div>
 
@@ -86,14 +86,8 @@
                 <span class="category-badge"><?php echo $data['category']; ?></span>
             </div>
 
-            <div class="<?php
-                if($data['status'] == 'Published'){
-                    echo 'status-green';
-                } else {
-                    echo 'status-orange';
-                }
-                ?>">
-                ● <?php echo $data['status']; ?>
+            <div class="review_text">
+                <?php echo $data['review']; ?>
             </div>
         </div>
          <?php } ?>
@@ -154,14 +148,16 @@
                 
                 <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">PROVINCE</label>
-                    <select name="province" class="form-select custom-input" required>
+                    <select id="provinsi" name="province" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Provinsi</option>
-                        <option>DI Yogyakarta</option>
-                        <option>DKI Jakarta</option>
-                        <option>Jawa Barat</option>
-                        <option>Jawa Tengah</option>
-                        <option>Jawa Timur</option>
-                        <option>Banten</option>
+                        <?php 
+                            $query = mysqli_query($koneksi, "SELECT id, name FROM reg_provinces");
+                            while ($data = mysqli_fetch_array($query)){
+                        ?>
+                        <option value="<?= $data['id'] ?>"><?= $data['name'] ?></option>
+                        <?php 
+                            }
+                        ?>
                     </select>
                 </div>
             </div>
@@ -169,24 +165,29 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">REGENCY / CITY</label>
-                    <input
-                    type="text"
-                    name="city"
-                    class="form-control custom-input"
-                    placeholder="e.g. Jakarta Selatan"
-                    required>
+                    <select id="kabupaten" name="city" class="form-select custom-input" required>
+                        <option value="" selected disabled>Pilih Kabupaten/Kota</option>
+                    </select>
+                    
                 </div>
                 
                 <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">VILLAGE / DISTRICT</label>
-                    <input
-                    type="text"
-                    name="district"
-                    class="form-control custom-input"
-                    placeholder="e.g. Kebayoran Baru"
-                    required>
+                    <select id="kecamatan" name="district" class="form-select custom-input" required>
+                        <option value="" selected disabled>Pilih Kecamatan</option>
+                    </select>
+                    
                 </div>
             </div>
+
+            <div class="mb-4">
+                <label class="form-label custom-label">REVIEW</label>
+                <textarea
+                name="description"
+                class="form-control custom-textarea"
+                placeholder="Bagikan pengalaman dan pendapatmu tentang tempat ini..." required></textarea>
+            </div>
+
                 <div class="upload-box">
                 <label for="image-upload" class="upload-content">
                     <h5>Klik untuk mengunggah atau seret foto</h5>
@@ -221,4 +222,8 @@
     </footer>
 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="script.js"></script>
+
 </html>
