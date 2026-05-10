@@ -586,18 +586,6 @@ body {
   color: #777;
 }
 
-.status-green {
-  color: #667b1f;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.status-orange {
-  color: #b85c00;
-  font-weight: bold;
-  font-size: 14px;
-}
-
 .table-page {
   display: flex;
   justify-content: space-between;
@@ -753,4 +741,10 @@ body {
   color: brown !important;
   font-weight: bold;
   border-bottom: 2px solid brown;
+}
+
+.review_text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
 }
