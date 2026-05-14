@@ -41,7 +41,7 @@
         </div>
         
         <div class="header-right">
-            <a href="#form-contribute" class="add-btn">Tambah Rekomendasi Baru</a>
+            <a href="#form-contribute" class="add-btn" style="text-decoration: none;"><i class="bi bi-patch-plus-fill"></i> Tambah Rekomendasi Baru</a>
         </div>
     </section>
 
