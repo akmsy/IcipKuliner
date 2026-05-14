@@ -63,7 +63,7 @@
         <section class="hero-section">
 
             <div class="hero-text">
-                <p class="orange">CURRENT LOCATION RECOMMENDATIONS</p>
+                <p class="orange">REKOMENDASI BERDASARKAN LOKASI SAAT INI</p>
                 <h1>Authentic Flavors of <span>Yogyakarta</span></h1>
                 <p class="hero-desc">
                     Discover 142 hidden culinary gems, from century-old Gudeg stalls to modern 
@@ -121,7 +121,7 @@
 
                     <div class="map-box">
                         <div class="map-area">
-                            REGIONAL MAP
+                            PETA WILAYAH KULINER
                         </div>
                         <p class="view-map">VIEW FULL MAP</p>
                     </div>

@@ -19,7 +19,7 @@
         <section class="login-section d-flex align-items-center justify-content-center">
         
         <div class="login-card">
-            <p class="small-title">WELCOME BACK</p>
+            <p class="small-title">SELAMAT DATANG KEMBALI</p>
             <h2 class="fw-bold">Sign In</h2>
             <p class="desc">
                 Return to your curated collection of regional heritage

@@ -58,11 +58,11 @@
     <section class="table-section">
 
         <div class="table-header">
-            <p>NAME OF SPOT</p>
-            <p>LOCATION</p>
-            <p>CATEGORY</p>
-            <p>REVIEW</p>
-            <p>ACTIONS</p>
+            <p>NAMA TEMPAT</p>
+            <p>LOKASI</p>
+            <p>KATEGORI</p>
+            <p>ULASAN</p>
+            <p>AKSI</p>
         </div>
 
         <?php while($data = mysqli_fetch_assoc($query)){?>
