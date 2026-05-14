@@ -116,7 +116,7 @@
     <section class="form-card" id="form-contribute">
         <form action="proses_contribute.php" method="POST" enctype="multipart/form-data">
             <div class="mb-4">
-                <label class="form-label custom-label">NAME OF PLACE</label>
+                <label class="form-label custom-label">NAMA TEMPAT</label>
                 <input
                 type="text"
                 name="place"
@@ -127,7 +127,7 @@
             
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">CATEGORY</label>
+                    <label class="form-label custom-label">KATEGORI</label>
                     <select name="category" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Kategori</option>
                         <option>Snacks</option>
@@ -137,7 +137,7 @@
                 </div>
                 
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">PROVINCE</label>
+                    <label class="form-label custom-label">PROVINSI</label>
                     <select id="provinsi" name="province" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Provinsi</option>
                         <?php 
@@ -154,7 +154,7 @@
     
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">REGENCY / CITY</label>
+                    <label class="form-label custom-label">KABUPATEN / KOTA</label>
                     <select id="kabupaten" name="city" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Kabupaten/Kota</option>
                     </select>
@@ -162,7 +162,7 @@
                 </div>
                 
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">VILLAGE / DISTRICT</label>
+                    <label class="form-label custom-label">KECAMATAN / DESA</label>
                     <select id="kecamatan" name="district" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Kecamatan</option>
                     </select>
@@ -171,7 +171,7 @@
             </div>
 
             <div class="mb-4">
-                <label class="form-label custom-label">REVIEW</label>
+                <label class="form-label custom-label">ULASAN</label>
                 <textarea
                 name="description"
                 class="form-control custom-textarea"
