@@ -64,11 +64,9 @@
 
             <div class="hero-text">
                 <p class="orange">REKOMENDASI BERDASARKAN LOKASI SAAT INI</p>
-                <h1>Authentic Flavors of <span>Yogyakarta</span></h1>
+                <h1>Cita Rasa Autentik <span>Yogyakarta</span></h1>
                 <p class="hero-desc">
-                    Discover 142 hidden culinary gems, from century-old Gudeg stalls to modern 
-                    fusion cafes in the heart of Java. From the royal kitchens of the Kraton to the
-                    bustling night markets of Malioboro, discover the soul of Javanese heritage.
+                    Temukan 142 rekomendasi kuliner, mulai dari gudeg legendaris hingga kafe modern di jantung Kota Yogyakarta. Jelajahi kekayaan rasa dan budaya Jawa dalam setiap hidangan.
                 </p>
             </div>
 
@@ -80,7 +78,7 @@
 
             <div class="col-md-3">
                 <div class="sidebar">
-                    <h6>Category</h6>
+                    <h6>Kategori</h6>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox">
                         <label class="form-check-label">Snacks</label>
@@ -96,7 +94,7 @@
                         <label class="form-check-label">Drinks</label>
                     </div>
 
-                    <h6 class="mt-4">Price Range</h6>
+                    <h6 class="mt-4">Rentang Harga</h6>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="price">
                         <label class="form-check-label">Budget (0-40K)</label>
@@ -123,7 +121,7 @@
                         <div class="map-area">
                             PETA WILAYAH KULINER
                         </div>
-                        <p class="view-map">VIEW FULL MAP</p>
+                        <p class="view-map">LIHAT PETA LENGKAP</p>
                     </div>
                 </div>
             </div>
