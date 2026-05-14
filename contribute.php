@@ -33,10 +33,9 @@
     <section class="top-header">
         <div class="header-left">
             <p class="small-orange">CONTRIBUTOR DASHBOARD</p>
-            <h1>Your Contributions</h1>
+            <h1>Kontribusi Anda</h1>
             <p class="header-desc">
-                Manage and curate regional culinary heritage spots you've shared
-                with the community.
+                Kelola dan atur rekomendasi kuliner daerah yang telah kamu bagikan kepada komunitas.
             </p>
         </div>
         
@@ -93,7 +92,7 @@
 
         <!-- Page -->
         <div class="table-page">
-            <p>Showing <?php echo $total_data; ?> contributions</p>
+            <p>Menampilkan <?php echo $total_data; ?> tempat kuliner</p>
 
             <div class="pagination-box">
                 <?php if($page > 1){ ?>
