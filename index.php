@@ -28,6 +28,9 @@
                         Jelajahi cita rasa warisan Nusantara yang tersembunyi di setiap sudut daerah.
                         Temukan resep keluarga dan hidangan otentik dari segala penjuru daerah.
                     </p>
+                    <a href="explore.php" class="btn btn-orange rounded-pill px-4 mt-2">
+                        Jelajahi Sekarang <i class="bi bi-arrow-right"></i>
+                    </a>
                 </article>
 
                 <figure class="col-md-6 d-flex justify-content-center">
