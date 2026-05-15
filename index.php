@@ -1,7 +1,7 @@
 <?php
     include 'koneksi.php';
 
-    $query = mysqli_query($koneksi,
+    $data = mysqli_query($koneksi,
         "SELECT 
         k.id_kuliner,
         k.nama_tempat,
@@ -92,31 +92,45 @@
                         Lihat semua <i class="bi bi-arrow-right"></i>
                     </a>
                 </header>
-                <div class="row g-4">
-                    <?php while ($data = mysqli_fetch_assoc($query)) { ?>
-                    <article class="col-md-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="img/<?= $data['gambar']; ?>" 
-                                class="card-img-top" 
-                                alt="<?= $data['nama_tempat']; ?>">
-                            <div class="card-body">
-                                <small class="text-muted">
-                                    <?= $data['lokasi']; ?>
-                                </small>
-                                <h5 class="fw-bold">
-                                    <?= $data['nama_tempat']; ?>
-                                    <span class="text-warning">
-                                        ⭐ <?= number_format($data['avg_rating'], 1); ?>
+            <div class="row g-4">
+                <?php while($d = mysqli_fetch_assoc($data)) { ?>
+                    
+                    <div class="col-md-4">
+                        <div class="food-card h-100">
+
+                            <img src="img/upload/<?= $d['gambar']; ?>" class="food-img">
+
+                            <div class="food-content d-flex flex-column">
+
+                                <div class="title-rating">
+                                    <h5><?= $d['nama_tempat']; ?></h5>
+
+                                    <span class="rating-box">
+                                        ⭐ <?= number_format($d['avg_rating'], 1); ?>
                                     </span>
-                                </h5>
-                                <p class="text-muted">
-                                    <?= $data['deskripsi']; ?>
+                                </div>
+
+                                <p class="location">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <?= $d['lokasi']; ?>
                                 </p>
+
+                                <p class="text-muted">
+                                    <?= substr($d['deskripsi'], 0, 80); ?>...
+                                </p>
+
+                                <a href="detail.php?id=<?= $d['id_kuliner']; ?>" 
+                                class="btn btn-orange btn-sm rounded-pill mt-auto">
+                                    Lihat Detail
+                                </a>
+
                             </div>
                         </div>
-                    </article>
-                    <?php } ?>
-                </div>
+                    </div>
+
+                <?php } ?>
+            </div>
+
             </div>
         </section>
 
