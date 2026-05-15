@@ -218,41 +218,31 @@ $queryKuliner = mysqli_query($koneksi,$sql);
         <!-- Food -->
         <div class="container py-4 mt-5">
             <div class="row g-4">
-
                 <?php
                 if(mysqli_num_rows($queryKuliner) > 0){
-
                     while($data = mysqli_fetch_assoc($queryKuliner)){
                 ?>
 
                 <div class="col-md-4">
-                    <div class="food-card">
-
+                    <div class="food-card h-100">
                         <img src="upload/<?= $data['gambar']; ?>" class="food-img">
-
-                        <div class="food-content">
-
+                        <div class="food-content d-flex flex-column">
                             <div class="title-rating">
                                 <h5><?= $data['nama_tempat']; ?></h5>
-
                                 <span class="rating-box">
                                     <?= $data['nama_kategori']; ?>
                                 </span>
                             </div>
-
                             <p class="price">
                                 <?= $data['harga']; ?>
                             </p>
-
                             <p class="location">
                                 <i class="bi bi-geo-alt"></i>
                                 <?= $data['lokasi']; ?>
                             </p>
-
                             <a href="detail.php?id_kuliner=<?= $data['id_kuliner']; ?>" class="btn btn-orange btn-sm rounded-pill mt-auto">
                                 Lihat Detail
                             </a>
-
                         </div>
                     </div>
                 </div>
