@@ -97,33 +97,25 @@
                     
                     <div class="col-md-4">
                         <div class="food-card h-100">
-
-                            <img src="img/upload/<?= $d['gambar']; ?>" class="food-img">
-
+                            <img src="upload/<?= $d['gambar']; ?>" class="food-img">
                             <div class="food-content d-flex flex-column">
-
                                 <div class="title-rating">
                                     <h5><?= $d['nama_tempat']; ?></h5>
-
                                     <span class="rating-box">
                                         ⭐ <?= number_format($d['avg_rating'], 1); ?>
                                     </span>
                                 </div>
-
                                 <p class="location">
                                     <i class="bi bi-geo-alt"></i>
                                     <?= $d['lokasi']; ?>
                                 </p>
-
                                 <p class="text-muted">
                                     <?= substr($d['deskripsi'], 0, 80); ?>...
                                 </p>
-
                                 <a href="detail.php?id=<?= $d['id_kuliner']; ?>" 
                                 class="btn btn-orange btn-sm rounded-pill mt-auto">
                                     Lihat Detail
                                 </a>
-
                             </div>
                         </div>
                     </div>

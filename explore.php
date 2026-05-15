@@ -90,7 +90,7 @@
 
                     <div class="col-md-4">
                         <div class="food-card">
-                            <img src="img/upload<?= $data['gambar']; ?>" class="food-img">
+                            <img src="upload/<?= $data['gambar']; ?>" class="food-img">
                             <div class="food-content">
                                 <div class="title-rating">
                                     <h5><?= $data['nama_tempat']; ?></h5>
