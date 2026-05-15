@@ -19,130 +19,97 @@
     <!-- Main -->
     <main>
         <div class="container-fluid main-container">
+            <!-- Filter -->
+            <div class="filter-box">
+                <div class="row g-3">
+                    <div class="col-md-3">
+                        <label class="filter-label">KABUPATEN</label>
+                        <select id="kabupaten" class="form-select custom-select">
+                            <option value="">Pilih Kabupaten</option>
+                            <?php 
+                                $query = mysqli_query($koneksi, "SELECT id_kabupaten, nama_kabupaten FROM kabupaten");
+                                while ($data = mysqli_fetch_array($query)){
+                            ?>
+                            <option value="<?= $data['id_kabupaten'] ?>"><?= $data['nama_kabupaten'] ?></option>
+                            <?php 
+                                }
+                            ?>
+                        </select>
+                    </div>
 
-        <!-- Filter -->
-        <div class="filter-box">
-            <div class="row g-3">
-                <div class="col-md-3">
-                    <label class="filter-label">KABUPATEN</label>
-                    <select id="kabupaten" class="form-select custom-select">
-                        <option value="">Pilih Kabupaten</option>
-                        <?php 
-                            $query = mysqli_query($koneksi, "SELECT id_kabupaten, nama_kabupaten FROM kabupaten");
-                            while ($data = mysqli_fetch_array($query)){
-                        ?>
-                        <option value="<?= $data['id_kabupaten'] ?>"><?= $data['nama_kabupaten'] ?></option>
-                        <?php 
-                            }
-                        ?>
-                    </select>
-                </div>
+                    <div class="col-md-3">
+                        <label class="filter-label">KECAMATAN</label>
+                        <select id="kecamatan" class="form-select custom-select">
+                            <option value="">Pilih Kecamatan</option>
+                        </select>
+                    </div>
 
-                <div class="col-md-3">
-                    <label class="filter-label">KECAMATAN</label>
-                    <select id="kecamatan" class="form-select custom-select">
-                        <option value="">Pilih Kecamatan</option>
-                    </select>
-                </div>
+                    <div class="col-md-3">
+                        <label class="filter-label">DESA</label>
+                        <select id="desa" class="form-select custom-select">
+                            <option value="">Pilih Desa</option>
+                        </select>
+                    </div>
 
-                <div class="col-md-3">
-                    <label class="filter-label">DESA</label>
-                    <select id="desa" class="form-select custom-select">
-                        <option value="">Pilih Desa</option>
-                    </select>
-                </div>
-
-                <div class="col-md-3 d-flex align-items-end">
-                    <button class="btn search-btn w-100">
-                        Cari Kuliner
-                    </button>
+                    <div class="col-md-3 d-flex align-items-end">
+                        <button class="btn search-btn w-100">
+                            Cari Kuliner
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Hero -->
-        <section class="hero-section">
+            <!-- Hero -->
+            <section class="hero-section">
 
-            <div class="hero-text">
-                <p class="orange">REKOMENDASI BERDASARKAN LOKASI SAAT INI</p>
-                <h1>Cita Rasa Autentik <span>Yogyakarta</span></h1>
-                <p class="hero-desc">
-                    Temukan 142 rekomendasi kuliner, mulai dari gudeg legendaris hingga kafe modern di jantung Kota Yogyakarta. Jelajahi kekayaan rasa dan budaya Jawa dalam setiap hidangan.
-                </p>
-            </div>
+                <div class="hero-text">
+                    <p class="orange">REKOMENDASI BERDASARKAN LOKASI SAAT INI</p>
+                    <h1>Cita Rasa Autentik <span>Yogyakarta</span></h1>
+                    <p class="hero-desc">
+                        Temukan 142 rekomendasi kuliner, mulai dari gudeg legendaris hingga kafe modern di jantung Kota Yogyakarta. Jelajahi kekayaan rasa dan budaya Jawa dalam setiap hidangan.
+                    </p>
+                </div>
 
-            <div class="hero-image"></div>
-        </section>
+                <div class="hero-image"></div>
+            </section>
 
-        <!-- Food -->
+             <!-- Food -->
             <div class="container py-4 mt-5">
                 <div class="row g-4">
 
+                    <?php
+                    $query = mysqli_query($koneksi, "SELECT k.*, kat.nama_kategori 
+                        FROM kuliner k
+                        JOIN kategori kat 
+                        ON k.kategori_id = kat.id_kategori
+                    ");
+
+                    while ($data = mysqli_fetch_assoc($query)) {
+                    ?>
+
                     <div class="col-md-4">
                         <div class="food-card">
-                            <img src="img/gudeg.jpg" class="food-img">
+                            <img src="img/upload<?= $data['gambar']; ?>" class="food-img">
                             <div class="food-content">
                                 <div class="title-rating">
-                                    <h5>Gudeg Yu Djum</h5>
-                                    <span class="rating-box">★ 4.8</span>
+                                    <h5><?= $data['nama_tempat']; ?></h5>
+                                    <span class="rating-box"><?= $data['nama_kategori']; ?></span>
                                 </div>
-                                <p class="price">Rp. 25.000–50.000</p>
-                                <p class="location"><i class="bi bi-geo-alt"></i> Jl. Wijilan No.167, Kraton</p>
+                                <p class="price"><?= $data['harga']; ?></p>
+                                <p class="location">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <?= $data['lokasi']; ?>
+                                </p>
+                                <a href="detail.php?id_kuliner=<?= $data['id_kuliner'] ?>" class="btn btn-orange btn-sm rounded-pill mt-auto">
+                                    Lihat Detail
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <div class="food-card">
-                            <img src="img/kopi.jpg" class="food-img">
-                            <div class="food-content">
-                                <div class="title-rating">
-                                    <h5>Kopi Jos Lik Man</h5>
-                                    <span class="rating-box">★ 4.7</span>
-                                </div>
-                                <p class="price">Rp. 5.000–20.000</p>
-                                <p class="location"><i class="bi bi-geo-alt"></i> Wirobrajan, Gedong Tengen</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4">
-                        <div class="food-card">
-                            <img src="img/sate.jpg" class="food-img">
-                            <div class="food-content">
-                                <div class="title-rating">
-                                    <h5>Sate Klatak Pak Bari</h5>
-                                    <span class="rating-box">★ 4.8</span>
-                                </div>
-                                <p class="price">Rp. 25.000–50.000</p>
-                                <p class="location"><i class="bi bi-geo-alt"></i> Pasar Wonokromo, Bantul</p>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
 
-                    <div class="col-md-4">
-                        <div class="food-card">
-                            <img src="img/bakpia.jpg" class="food-img">
-                            <div class="food-content">
-                                <div class="title-rating">
-                                    <h5>Bakpia Pathok 25</h5>
-                                    <span class="rating-box">★ 4.6</span>
-                                </div>
-                                <p class="price">Rp. 30.000–60.000</p>
-                                <p class="location"><i class="bi bi-geo-alt"></i> Suryodiningratan NS4, Pathok</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-                <div class="pagination-box">
-                    <span class="page"><</span>
-                    <span class="page active-page">1</span>
-                    <span class="page">2</span>
-                    <span class="page">3</span>
-                    <span class="page">></span>
-                </div>
-            </div>
             </div>
         </div>
 
