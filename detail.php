@@ -46,7 +46,6 @@ $k = mysqli_fetch_assoc($query);
                 </span>
                 <h2 class="mt-2"><?= $k['nama_tempat']; ?></h2>
                 <p><i class="bi bi-geo-alt"></i> <?= $k['lokasi']; ?></p>
-                <p><?= $k['deskripsi']; ?></p>
                 <small>Dibuat oleh <b><?= $k['username']; ?></b></small>
                 <?php if (!empty($k['maps'])) { ?>
                     <div class="mt-3">

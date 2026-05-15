@@ -127,30 +127,49 @@
 
     <section class="form-card" id="form-contribute">
         <form action="proses_contribute.php" method="POST" enctype="multipart/form-data">
-            <div class="mb-4">
-                <label class="form-label custom-label">NAMA TEMPAT</label>
-                <input
-                type="text"
-                name="place"
-                class="form-control custom-input"
-                placeholder="e.g. Warung Nasi Campur Bu Made"
-                required>
-            </div>
-            
             <div class="row">
                 <div class="col-md-6 mb-4">
+                    <label class="form-label custom-label">NAMA TEMPAT</label>
+                    <input
+                    type="text"
+                    name="place"
+                    class="form-control custom-input"
+                    placeholder="e.g. Warung Nasi Campur Bu Made"
+                    required>
+                </div>
+            
+                <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">KATEGORI</label>
-                    <select name="category" class="form-select custom-input" required>
+                    <select name="kategori" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Kategori</option>
-                        <option>Snacks</option>
-                        <option>Main Course</option>
-                        <option>Drinks</option>
+                        <?php
+                            $kategoriQuery = mysqli_query($koneksi,"
+                                SELECT *
+                                FROM kategori
+                            ");
+
+                            while($kat = mysqli_fetch_assoc($kategoriQuery)){
+                        ?>
+                        <option value="<?= $kat['id_kategori']; ?>">
+                            <?= $kat['nama_kategori']; ?>
+                        </option>
+                        <?php } ?>
                     </select>
                 </div>
                 
                 <div class="col-md-6 mb-4">
+                    <label class="form-label custom-label">DETAIL ALAMAT</label>
+                    <input
+                    type="text"
+                    name="detail_alamat"
+                    class="form-control custom-input"
+                    placeholder="Contoh: Jl. Malioboro No 10"
+                    required>
+                </div>
+
+                <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">KABUPATEN</label>
-                    <select id="kabupaten" name="province" class="form-select custom-input" required>
+                    <select id="kabupaten" name="kabupaten" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Kabupaten</option>
                         <?php 
                             $query = mysqli_query($koneksi, "SELECT id_kabupaten, nama_kabupaten FROM kabupaten");
@@ -167,7 +186,7 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">KECAMATAN</label>
-                    <select id="kecamatan" name="city" class="form-select custom-input" required>
+                    <select id="kecamatan" name="kecamatan" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Kecamatan</option>
                     </select>
                     
@@ -175,19 +194,78 @@
                 
                 <div class="col-md-6 mb-4">
                     <label class="form-label custom-label">DESA</label>
-                    <select id="desa" name="district" class="form-select custom-input" required>
+                    <select id="desa" name="desa" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Desa</option>
                     </select>
                     
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <label class="form-label custom-label">
+                        JAM OPERASIONAL
+                    </label>
+                    <input
+                    type="text"
+                    name="jam_operasional"
+                    class="form-control custom-input"
+                    placeholder="Contoh: 08.00 - 22.00"
+                    required>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <label class="form-label custom-label">
+                        HARGA
+                    </label>
+                    <input
+                    type="text"
+                    name="harga"
+                    class="form-control custom-input"
+                    placeholder="Contoh: Rp15.000 - Rp50.000"
+                    required>
+                </div>
+            </div>
+
             <div class="mb-4">
-                <label class="form-label custom-label">ULASAN</label>
+                <label class="form-label custom-label">
+                    LINK GOOGLE MAPS
+                </label>
+                <input
+                type="url"
+                name="maps"
+                class="form-control custom-input"
+                placeholder="https://maps.google.com/..."
+                required>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label custom-label">
+                    RATING
+                </label>
+                <select
+                name="rating"
+                class="form-select custom-input"
+                required>
+                    <option value="" selected disabled>
+                        Pilih Rating
+                    </option>
+                    <option value="1">1 ⭐</option>
+                    <option value="2">2 ⭐⭐</option>
+                    <option value="3">3 ⭐⭐⭐</option>
+                    <option value="4">4 ⭐⭐⭐⭐</option>
+                    <option value="5">5 ⭐⭐⭐⭐⭐</option>
+                </select>
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label custom-label">
+                    ULASAN
+                </label>
                 <textarea
-                name="description"
+                name="review"
                 class="form-control custom-textarea"
-                placeholder="Bagikan pengalaman dan pendapatmu tentang tempat ini..." required></textarea>
+                placeholder="Bagikan pengalamanmu..."
+                required></textarea>
             </div>
 
             <div class="mb-4">

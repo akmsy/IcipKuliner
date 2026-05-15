@@ -6,7 +6,7 @@
         k.id_kuliner,
         k.nama_tempat,
         k.lokasi,
-        k.deskripsi,
+        k.harga,
         k.gambar,
         COALESCE(AVG(u.rating), 0) AS avg_rating
         FROM kuliner k
@@ -110,7 +110,7 @@
                                     <?= $d['lokasi']; ?>
                                 </p>
                                 <p class="text-muted">
-                                    <?= substr($d['deskripsi'], 0, 80); ?>...
+                                    <?= $d['harga']; ?>
                                 </p>
                                 <a href="detail.php?id=<?= $d['id_kuliner']; ?>" 
                                 class="btn btn-orange btn-sm rounded-pill mt-auto">
