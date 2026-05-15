@@ -32,15 +32,10 @@
 
         <div class="d-flex align-items-center">
         <?php if (!isset($_SESSION['logged_in'])): ?>
-
             <a href="login.php" class="btn btn-outline-orange rounded-pill px-4 me-3">Login</a>
             <a href="register.php" class="btn btn-orange rounded-pill px-4">Register</a>
-
         <?php else: ?>
 
-            <form action="search.php" method="GET">
-                <input class="form-control rounded-pill" type="search" name="keyword" placeholder="Search">
-            </form>
             <div class="dropdown ms-2">
                 <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
                     <img src="img/profil.png" width="40" height="40" class="rounded-circle border border-2 border-warning shadow-sm">
