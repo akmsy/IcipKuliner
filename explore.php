@@ -74,62 +74,11 @@
             <div class="hero-image"></div>
         </section>
 
-        <!-- Category -->
-        <div class="row mt-4">
-
-            <div class="col-md-3">
-                <div class="sidebar">
-                    <h6>Kategori</h6>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">Snacks</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">Main Course</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox">
-                        <label class="form-check-label">Drinks</label>
-                    </div>
-
-                    <h6 class="mt-4">Rentang Harga</h6>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="price">
-                        <label class="form-check-label">Budget (0-40K)</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="price">
-                        <label class="form-check-label">Menengah (40K-80K)</label>
-                    </div>
-
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="price">
-                        <label class="form-check-label">Fine Dining (80K+)</label>
-                    </div>
-
-                    <h6 class="mt-4">Min. Rating</h6>
-                    <select class="form-select rating-select">
-                        <option>5.0 Stars</option>
-                        <option>4.5+ Stars</option>
-                        <option>4.0+ Stars</option>
-                    </select>
-
-                    <div class="map-box">
-                        <div class="map-area"></div>
-                        <p class="view-map">LIHAT PETA LENGKAP</p>
-                    </div>
-                </div>
-            </div>
-
         <!-- Food -->
-            <div class="col-md-9">
+            <div class="container py-4 mt-5">
                 <div class="row g-4">
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="food-card">
                             <img src="img/gudeg.jpg" class="food-img">
                             <div class="food-content">
@@ -143,7 +92,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="food-card">
                             <img src="img/kopi.jpg" class="food-img">
                             <div class="food-content">
@@ -157,7 +106,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="food-card">
                             <img src="img/sate.jpg" class="food-img">
                             <div class="food-content">
@@ -171,7 +120,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="food-card">
                             <img src="img/bakpia.jpg" class="food-img">
                             <div class="food-content">
