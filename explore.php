@@ -19,8 +19,23 @@
     <!-- Main -->
     <main>
         <div class="container-fluid main-container">
+
+            <!-- Hero -->
+            <section class="hero-section mb-5">
+
+                <div class="hero-text">
+                    <p class="orange">REKOMENDASI BERDASARKAN LOKASI SAAT INI</p>
+                    <h1>Cita Rasa Autentik <span>Yogyakarta</span></h1>
+                    <p class="hero-desc">
+                        Temukan 142 rekomendasi kuliner, mulai dari gudeg legendaris hingga kafe modern di jantung Kota Yogyakarta. Jelajahi kekayaan rasa dan budaya Jawa dalam setiap hidangan.
+                    </p>
+                </div>
+
+                <div class="hero-image"></div>
+            </section>
+
             <!-- Filter -->
-            <div class="filter-box">
+            <div class="filter-box shadow">
                 <div class="row g-3">
                     <div class="col-md-3">
                         <label class="filter-label">KABUPATEN</label>
@@ -58,20 +73,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Hero -->
-            <section class="hero-section">
-
-                <div class="hero-text">
-                    <p class="orange">REKOMENDASI BERDASARKAN LOKASI SAAT INI</p>
-                    <h1>Cita Rasa Autentik <span>Yogyakarta</span></h1>
-                    <p class="hero-desc">
-                        Temukan 142 rekomendasi kuliner, mulai dari gudeg legendaris hingga kafe modern di jantung Kota Yogyakarta. Jelajahi kekayaan rasa dan budaya Jawa dalam setiap hidangan.
-                    </p>
-                </div>
-
-                <div class="hero-image"></div>
-            </section>
 
              <!-- Food -->
             <div class="container py-4 mt-5">
