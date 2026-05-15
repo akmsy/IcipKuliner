@@ -3,7 +3,7 @@
     <div class="row align-items-center">
 
       <div class="col-md-8">
-        <h5 class="fw-semibold mb-3 text-dark fw-bold">IcipKuliner</h5>
+        <h5 class="fw-semibold mb-3 text-dark fw-bold">IcipKuliner <span style="font-size: small">by Akma Zahra</span></h5>
         <p class="text-muted small mb-0">
           &copy; <?php echo date('Y'); ?> IcipKuliner. Melestarikan Warisan Nusantara. Menjaga esensi kuliner untuk generasi mendatang.
         </p>
