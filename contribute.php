@@ -47,7 +47,13 @@
 
     <!-- Table -->
     <?php
-    $query = mysqli_query($koneksi, "SELECT * FROM contributions LIMIT $start, $limit");
+    $query = mysqli_query($koneksi, " SELECT 
+            contributions.*,
+            reg_provinces.name AS province_name,
+            reg_regencies.name AS city_name
+        FROM contributions
+        JOIN reg_provinces ON contributions.province = reg_provinces.id
+        JOIN reg_regencies ON contributions.city = reg_regencies.id LIMIT $start, $limit");
     $query_total = mysqli_query($koneksi,"SELECT * FROM contributions");
     $total_data = mysqli_num_rows($query_total);
     $total_query = mysqli_query($koneksi,"SELECT * FROM contributions");
@@ -77,8 +83,8 @@
             </div>
             
             <div class="location-text">
-                <?php echo $data['province']; ?>,
-                <?php echo $data['city']; ?>
+                <?php echo $data['province_name']; ?>,
+                <?php echo $data['city_name']; ?>
             </div>
             
             <div>
@@ -87,6 +93,11 @@
 
             <div class="review_text">
                 <?php echo $data['review']; ?>
+            </div>
+
+            <div>
+                <a href="#" class="btn btn-success">Edit</a>
+                <button type="button" class="btn btn-warning">Hapus</button>
             </div>
         </div>
          <?php } ?>
