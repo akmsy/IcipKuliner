@@ -2,10 +2,12 @@
     session_start();
     include 'koneksi.php';
 
-    $email = $_POST['email'];
+    $email    = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $confirm  = $_POST['password_confirm'];
 
+    // Validasi input
     if (empty($email) || empty($username) || empty($password)) {
         $_SESSION['error'] = "Semua field wajib diisi!";
         header("location: register.php");
@@ -20,9 +22,23 @@
         exit();
     }
 
-    // $password = password_hash($password_input, PASSWORD_DEFAULT);
+    // cek panjang pw
+    if (strlen($password) < 6) {
+        $_SESSION['error'] = "Password minimal 6 karakter.";
+        header("location: register.php");
+        exit();
+    }
 
-    $query = "INSERT INTO users (email, username, password) VALUES ('$email', '$username','$password')";
+    // cek konfirmasi pw
+    if ($password !== $confirm) {
+        $_SESSION['error'] = "Password dan konfirmasi password tidak cocok.";
+        header("location: register.php");
+        exit();
+    }
+
+    $password_hashed = password_hash($password, PASSWORD_DEFAULT);
+
+    $query = "INSERT INTO users (email, username, password) VALUES ('$email', '$username','$password_hashed')";
     $result = mysqli_query($koneksi, $query);
 
     if($result){
