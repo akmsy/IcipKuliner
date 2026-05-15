@@ -6,7 +6,7 @@
     }
 
     $page = isset($_GET['page'])? $_GET['page']: 1;
-    $limit = 2;
+    $limit = 5;
     $start = ($page - 1) * $limit;
 ?>
 
@@ -15,7 +15,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <title>Contribute</title>
@@ -32,7 +33,7 @@
     <!--Header-->
     <section class="top-header">
         <div class="header-left">
-            <p class="small-orange">CONTRIBUTOR DASHBOARD</p>
+            <p class="small-orange">DASHBOARD KONTRIBUTOR</p>
             <h1>Kontribusi Anda</h1>
             <p class="header-desc">
                 Kelola dan atur rekomendasi kuliner daerah yang telah kamu bagikan kepada komunitas.
@@ -178,16 +179,20 @@
                 placeholder="Bagikan pengalaman dan pendapatmu tentang tempat ini..." required></textarea>
             </div>
 
+            <div class="mb-4">
+                <label class="form-label custom-label" for="image-upload">FOTO TEMPAT</label>
                 <div class="upload-box">
-                <label for="image-upload" class="upload-content">
-                    <h5>Klik untuk mengunggah atau seret foto</h5>
-                    <p>Format JPG, PNG Max. 5MB. Rekomendasi aspek rasio 4:3</p>
+                    <label for="image-upload" class="upload-content">
+                        <h5>Klik untuk mengunggah atau seret foto</h5>
+                        <p>Format JPG, PNG Max. 5MB. Rekomendasi aspek rasio 4:3</p>
 
-                    <input
-                    type="file"
-                    id="image-upload"
-                    name="image"
-                    hidden>
+                        <input
+                        type="file"
+                        id="image-upload"
+                        name="image"
+                        accept=".jpg,.jpeg,.png,.webp"
+                        hidden>
+                    </label>
                 </div>
             </div>
             
