@@ -58,6 +58,20 @@ $k = mysqli_fetch_assoc($query);
             </div>
         </div>
     </div>
+
+    <!-- Lokasi Gmaps -->
+    <?php if (!empty($k['maps'])): ?>
+        <div class="ms-5 me-5 mb-5">
+            <h5 class="fw-bold mb-3">Lokasi di Peta</h5>
+            <div class="rounded-4 overflow-hidden shadow">
+                <iframe
+                    src="https://maps.google.com/maps?q=<?= urlencode($k['nama_tempat'].' '.$k['lokasi']) ?>&output=embed"
+                    width="100%" height="350" class="maps-embed" allowfullscreen loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    <?php endif ?>
+    
     <?php include 'footer.php'; ?>
 
 </body>
