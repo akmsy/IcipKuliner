@@ -379,8 +379,7 @@ body {
 }
 
 .map-area {
-  background: #ececec;
-  background-image: url(img/map.jpeg);
+  background: #ececec url(img/map.jpeg) center / cover no-repeat;
   height: 120px;
   border-radius: 10px;
   display: flex;

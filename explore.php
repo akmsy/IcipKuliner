@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="img/logo.png">
     <title>Explore</title>
@@ -102,7 +103,7 @@
 
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="price">
-                        <label class="form-check-label">Mid-Range (40K-80K)</label>
+                        <label class="form-check-label">Menengah (40K-80K)</label>
                     </div>
 
                     <div class="form-check">
@@ -116,11 +117,9 @@
                         <option>4.5+ Stars</option>
                         <option>4.0+ Stars</option>
                     </select>
-
+                    
                     <div class="map-box">
-                        <div class="map-area">
-                            PETA WILAYAH KULINER
-                        </div>
+                        <div class="map-area"></div>
                         <p class="view-map">LIHAT PETA LENGKAP</p>
                     </div>
                 </div>
@@ -139,7 +138,7 @@
                                     <span class="rating-box">★ 4.8</span>
                                 </div>
                                 <p class="price">Rp. 25.000–50.000</p>
-                                <p class="location">📍 Jl. Wijilan No.167, Kraton</p>
+                                <p class="location"><i class="bi bi-geo-alt"></i> Jl. Wijilan No.167, Kraton</p>
                             </div>
                         </div>
                     </div>
@@ -153,7 +152,7 @@
                                     <span class="rating-box">★ 4.7</span>
                                 </div>
                                 <p class="price">Rp. 5.000–20.000</p>
-                                <p class="location">📍 Wirobrajan, Gedong Tengen</p>
+                                <p class="location"><i class="bi bi-geo-alt"></i> Wirobrajan, Gedong Tengen</p>
                             </div>
                         </div>
                     </div>
@@ -167,7 +166,7 @@
                                     <span class="rating-box">★ 4.8</span>
                                 </div>
                                 <p class="price">Rp. 25.000–50.000</p>
-                                <p class="location">📍 Pasar Wonokromo, Bantul</p>
+                                <p class="location"><i class="bi bi-geo-alt"></i> Pasar Wonokromo, Bantul</p>
                             </div>
                         </div>
                     </div>
@@ -181,7 +180,7 @@
                                     <span class="rating-box">★ 4.6</span>
                                 </div>
                                 <p class="price">Rp. 30.000–60.000</p>
-                                <p class="location">📍 Suryodiningratan NS4, Pathok</p>
+                                <p class="location"><i class="bi bi-geo-alt"></i> Suryodiningratan NS4, Pathok</p>
                             </div>
                         </div>
                     </div>
