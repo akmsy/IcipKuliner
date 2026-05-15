@@ -24,14 +24,14 @@
         <div class="filter-box">
             <div class="row g-3">
                 <div class="col-md-3">
-                    <label class="filter-label">PROVINSI</label>
-                    <select id="provinsi" class="form-select custom-select">
-                        <option value="">Pilih Provinsi</option>
+                    <label class="filter-label">KABUPATEN</label>
+                    <select id="kabupaten" class="form-select custom-select">
+                        <option value="">Pilih Kabupaten</option>
                         <?php 
-                            $query = mysqli_query($koneksi, "SELECT id, name FROM reg_provinces");
+                            $query = mysqli_query($koneksi, "SELECT id_kabupaten, nama_kabupaten FROM kabupaten");
                             while ($data = mysqli_fetch_array($query)){
                         ?>
-                        <option value="<?= $data['id'] ?>"><?= $data['name'] ?></option>
+                        <option value="<?= $data['id_kabupaten'] ?>"><?= $data['nama_kabupaten'] ?></option>
                         <?php 
                             }
                         ?>
@@ -39,16 +39,16 @@
                 </div>
 
                 <div class="col-md-3">
-                    <label class="filter-label">KABUPATEN/KOTA</label>
-                    <select id="kabupaten" class="form-select custom-select">
-                        <option value="">Pilih Kabupaten/Kota</option>
+                    <label class="filter-label">KECAMATAN</label>
+                    <select id="kecamatan" class="form-select custom-select">
+                        <option value="">Pilih Kecamatan</option>
                     </select>
                 </div>
 
                 <div class="col-md-3">
-                    <label class="filter-label">KECAMATAN/DESA</label>
-                    <select id="kecamatan" class="form-select custom-select">
-                        <option value="">Pilih Kecamatan/Desa</option>
+                    <label class="filter-label">DESA</label>
+                    <select id="desa" class="form-select custom-select">
+                        <option value="">Pilih Desa</option>
                     </select>
                 </div>
 
@@ -117,7 +117,7 @@
                         <option>4.5+ Stars</option>
                         <option>4.0+ Stars</option>
                     </select>
-                    
+
                     <div class="map-box">
                         <div class="map-area"></div>
                         <p class="view-map">LIHAT PETA LENGKAP</p>

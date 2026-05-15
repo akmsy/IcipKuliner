@@ -49,11 +49,11 @@
     <?php
     $query = mysqli_query($koneksi, " SELECT 
             contributions.*,
-            reg_provinces.name AS province_name,
-            reg_regencies.name AS city_name
+            provinsi.nama_provinsi AS nama_provinsi,
+            kabupaten.nama_kabupaten AS nama_kabupaten
         FROM contributions
-        JOIN reg_provinces ON contributions.province = reg_provinces.id
-        JOIN reg_regencies ON contributions.city = reg_regencies.id LIMIT $start, $limit");
+        JOIN provinsi ON contributions.province = provinsi.id_provinsi
+        JOIN kabupaten ON contributions.city = kabupaten.id_kabupaten LIMIT $start, $limit");
     $query_total = mysqli_query($koneksi,"SELECT * FROM contributions");
     $total_data = mysqli_num_rows($query_total);
     $total_query = mysqli_query($koneksi,"SELECT * FROM contributions");
@@ -83,8 +83,8 @@
             </div>
             
             <div class="location-text">
-                <?php echo $data['province_name']; ?>,
-                <?php echo $data['city_name']; ?>
+                <?php echo $data['nama_provinsi']; ?>,
+                <?php echo $data['nama_kabupaten']; ?>
             </div>
             
             <div>
@@ -153,7 +153,7 @@
                     <select id="provinsi" name="province" class="form-select custom-input" required>
                         <option value="" selected disabled>Pilih Provinsi</option>
                         <?php 
-                            $query = mysqli_query($koneksi, "SELECT id, name FROM reg_provinces");
+                            $query = mysqli_query($koneksi, "SELECT id, name FROM provinsi");
                             while ($data = mysqli_fetch_array($query)){
                         ?>
                         <option value="<?= $data['id'] ?>"><?= $data['name'] ?></option>
