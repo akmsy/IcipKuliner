@@ -36,9 +36,9 @@ $k = mysqli_fetch_assoc($query);
 
     <div class="container py-5">
         <a href="explore.php" class="btn btn-secondary mb-4">← Back</a>
-        <div class="row g-4">
+        <div class="row g-5">
             <div class="col-md-7">
-                <img src="img/upload/<?= $k['gambar']; ?>" class="img-fluid rounded">
+                <img src="upload/<?= $k['gambar']; ?>" class="detail-img">
             </div>
             <div class="col-md-5">
                 <span class="badge bg-dark">
