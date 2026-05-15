@@ -48,9 +48,7 @@
 
     <!-- Table -->
     <?php
-        $limit = 5;
-        $start = ($page - 1) * $limit;
-
+        $user_id = $_SESSION['id'];
         $query = mysqli_query($koneksi, "SELECT 
             k.*,
             kat.nama_kategori,
@@ -61,6 +59,7 @@
             ON k.kategori_id = kat.id_kategori
         LEFT JOIN ulasan u 
             ON k.id_kuliner = u.kuliner_id
+        WHERE k.user_id = '$user_id'
         GROUP BY k.id_kuliner
         LIMIT $start, $limit");
 
@@ -68,6 +67,7 @@
         $total_query = mysqli_query($koneksi, "
             SELECT COUNT(*) as total 
             FROM kuliner
+            WHERE user_id = '$user_id'
         ");
 
         $total_data = mysqli_fetch_assoc($total_query)['total'];
