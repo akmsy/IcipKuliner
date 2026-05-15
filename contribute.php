@@ -149,14 +149,14 @@
                 </div>
                 
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">PROVINSI</label>
-                    <select id="provinsi" name="province" class="form-select custom-input" required>
-                        <option value="" selected disabled>Pilih Provinsi</option>
+                    <label class="form-label custom-label">KABUPATEN</label>
+                    <select id="kabupaten" name="province" class="form-select custom-input" required>
+                        <option value="" selected disabled>Pilih Kabupaten</option>
                         <?php 
-                            $query = mysqli_query($koneksi, "SELECT id, name FROM provinsi");
+                            $query = mysqli_query($koneksi, "SELECT id_kabupaten, nama_kabupaten FROM kabupaten");
                             while ($data = mysqli_fetch_array($query)){
                         ?>
-                        <option value="<?= $data['id'] ?>"><?= $data['name'] ?></option>
+                        <option value="<?= $data['id_kabupaten'] ?>"><?= $data['nama_kabupaten'] ?></option>
                         <?php 
                             }
                         ?>
@@ -166,17 +166,17 @@
     
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">KABUPATEN / KOTA</label>
-                    <select id="kabupaten" name="city" class="form-select custom-input" required>
-                        <option value="" selected disabled>Pilih Kabupaten/Kota</option>
+                    <label class="form-label custom-label">KECAMATAN</label>
+                    <select id="kecamatan" name="city" class="form-select custom-input" required>
+                        <option value="" selected disabled>Pilih Kecamatan</option>
                     </select>
                     
                 </div>
                 
                 <div class="col-md-6 mb-4">
-                    <label class="form-label custom-label">KECAMATAN / DESA</label>
-                    <select id="kecamatan" name="district" class="form-select custom-input" required>
-                        <option value="" selected disabled>Pilih Kecamatan</option>
+                    <label class="form-label custom-label">DESA</label>
+                    <select id="desa" name="district" class="form-select custom-input" required>
+                        <option value="" selected disabled>Pilih Desa</option>
                     </select>
                     
                 </div>
