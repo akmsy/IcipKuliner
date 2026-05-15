@@ -35,7 +35,7 @@ $k = mysqli_fetch_assoc($query);
     <?php include 'navbar.php'; ?>
 
     <div class="container py-5">
-        <a href="explore.php" class="btn btn-light mb-4">← Back</a>
+        <a href="explore.php" class="btn btn-secondary mb-4">← Back</a>
         <div class="row g-4">
             <div class="col-md-7">
                 <img src="img/upload/<?= $k['gambar']; ?>" class="img-fluid rounded">
