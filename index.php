@@ -140,7 +140,7 @@
                             Punya hidden gem kuliner yang layak dikenal? Yuk bagikan ke komunitas
                             dan bantu lestarikan warisan kuliner Nusantara.
                         </p>
-                        <a href="#" class="btn btn-light mt-3">
+                        <a href="contribute.php" class="btn btn-light mt-3">
                             Submit Spot <i class="bi bi-arrow-right"></i>
                         </a>
                     </div>
