@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include 'koneksi.php';
     if(!isset($_SESSION['logged_in'])){
         header("location: login.php");
         exit();
@@ -47,18 +48,32 @@
 
     <!-- Table -->
     <?php
-    $query = mysqli_query($koneksi, " SELECT 
-            contributions.*,
-            provinsi.nama_provinsi AS nama_provinsi,
-            kabupaten.nama_kabupaten AS nama_kabupaten
-        FROM contributions
-        JOIN provinsi ON contributions.province = provinsi.id_provinsi
-        JOIN kabupaten ON contributions.city = kabupaten.id_kabupaten LIMIT $start, $limit");
-    $query_total = mysqli_query($koneksi,"SELECT * FROM contributions");
-    $total_data = mysqli_num_rows($query_total);
-    $total_query = mysqli_query($koneksi,"SELECT * FROM contributions");
-    $total_data = mysqli_num_rows($total_query);
-    $total_page = ceil($total_data / $limit);
+        $limit = 5;
+        $start = ($page - 1) * $limit;
+
+        $query = mysqli_query($koneksi, "SELECT 
+            k.*,
+            kat.nama_kategori,
+            COALESCE(AVG(u.rating), 0) AS avg_rating,
+            COUNT(u.id_ulasan) AS total_ulasan
+        FROM kuliner k
+        JOIN kategori kat 
+            ON k.kategori_id = kat.id_kategori
+        LEFT JOIN ulasan u 
+            ON k.id_kuliner = u.kuliner_id
+        GROUP BY k.id_kuliner
+        LIMIT $start, $limit");
+
+        // Total data
+        $total_query = mysqli_query($koneksi, "
+            SELECT COUNT(*) as total 
+            FROM kuliner
+        ");
+
+        $total_data = mysqli_fetch_assoc($total_query)['total'];
+
+        // Total halaman
+        $total_page = ceil($total_data / $limit);
     ?>
  
     <section class="table-section">
@@ -76,43 +91,48 @@
         <div class="table-row">
 
             <div class="spot-info">
-                <img src="upload/<?php echo $data['image']; ?>" class="spot-img">
+                <img src="upload/<?= $data['gambar']; ?>" class="spot-img">
                 <div>
-                    <h5><?php echo $data['place']; ?></h5>
+                    <h5><?= $data['nama_tempat']; ?></h5>
                 </div>
             </div>
             
             <div class="location-text">
-                <?php echo $data['nama_provinsi']; ?>,
-                <?php echo $data['nama_kabupaten']; ?>
+                <?= $data['lokasi']; ?>,
             </div>
             
             <div>
-                <span class="category-badge"><?php echo $data['category']; ?></span>
+                <span class="category-badge">
+                    <?= $data['nama_kategori']; ?></span>
             </div>
 
             <div class="review_text">
-                <?php echo $data['review']; ?>
+                ⭐ <?= number_format($data['avg_rating'],1); ?>
+                (<?= $data['total_ulasan']; ?> ulasan)
             </div>
 
             <div>
-                <a href="#" class="btn btn-success">Edit</a>
-                <button type="button" class="btn btn-warning">Hapus</button>
+                <a href="edit.php?id=<?= $data['id_kuliner'];?>" class="btn btn-success">Edit</a>
+                <a href="hapus.php?id=<?= $data['id_kuliner']; ?>" class="btn btn-warning" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
             </div>
         </div>
          <?php } ?>
 
         <!-- Page -->
         <div class="table-page">
-            <p>Menampilkan <?php echo $total_data; ?> tempat kuliner</p>
+            <p>Menampilkan <?= $total_data; ?> tempat kuliner</p>
 
             <div class="pagination-box">
                 <?php if($page > 1){ ?>
-                <a href="?page=<?php echo $page - 1; ?>"class="page-btn"><</a>
+                    <a href="?page=<?= $page - 1; ?>" class="page-btn <?= ($page > 1) ? 'active' : ''; ?>">
+                        <
+                    </a>
                 <?php } ?>
 
                 <?php if($page < $total_page){ ?>
-                <a href="?page=<?php echo $page + 1; ?>"class="page-btn">></a>
+                    <a href="?page=<?= $page + 1; ?>" class="page-btn <?= ($page < $total_page) ? 'active' : ''; ?>">
+                        >
+                    </a>
                 <?php } ?>
             </div>
         </div>

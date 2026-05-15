@@ -623,6 +623,12 @@ body {
   justify-content: center;
   align-items: center;
   padding-bottom: 3px;
+  text-decoration: none;
+}
+
+.page-btn.active{
+    background: #ff7a00;
+    color: white;
 }
 
 .title-section h1 {
