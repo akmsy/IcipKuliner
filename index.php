@@ -1,3 +1,22 @@
+<?php
+    include 'koneksi.php';
+
+    $query = mysqli_query($koneksi,
+        "SELECT 
+        k.id_kuliner,
+        k.nama_tempat,
+        k.lokasi,
+        k.deskripsi,
+        k.gambar,
+        COALESCE(AVG(u.rating), 0) AS avg_rating
+        FROM kuliner k
+        LEFT JOIN ulasan u ON k.id_kuliner = u.kuliner_id
+        GROUP BY k.id_kuliner
+        ORDER BY avg_rating DESC
+        LIMIT 3"
+    );
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,71 +80,42 @@
             </div>
         </section>
         
+        <!-- TOP KULINER -->
         <section class="py-5 bg-birumuda">
             <div class="container">
-                
                 <header class="d-flex justify-content-between align-items-center mb-4">
                     <div>
                         <p class="text-uppercase text-muted mb-1">Regional Spotlight</p>
                         <h2 class="fw-bold">Top Kuliner di Yogyakarta</h2>
                     </div>
-                    <nav>
-                        <a href="#" class="text-decoration-none">
-                            Lihat semua <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </nav>
+                    <a href="explore.php" class="text-decoration-none">
+                        Lihat semua <i class="bi bi-arrow-right"></i>
+                    </a>
                 </header>
-
                 <div class="row g-4">
-
+                    <?php while ($data = mysqli_fetch_assoc($query)) { ?>
                     <article class="col-md-4">
                         <div class="card border-0 shadow-sm h-100">
-                            <img src="img/gudeg.jpg" class="card-img-top" alt="Gudeg Yu Djum">
+                            <img src="img/<?= $data['gambar']; ?>" 
+                                class="card-img-top" 
+                                alt="<?= $data['nama_tempat']; ?>">
                             <div class="card-body">
-                                <small class="text-muted">KRATON</small>
-                                <h5 class="fw-bold">Gudeg Yu Djum <span class="text-warning">⭐ 4.9</span></h5>
-                                <p class="text-muted">
-                                    Gudeg legendaris khas Jogja yang dimasak dengan kayu bakar sejak 1950.
-                                </p>
                                 <small class="text-muted">
-                                    <i class="bi bi-clock"></i> 15 menit &nbsp; | &nbsp; Rp. 25.000–50.000
+                                    <?= $data['lokasi']; ?>
                                 </small>
+                                <h5 class="fw-bold">
+                                    <?= $data['nama_tempat']; ?>
+                                    <span class="text-warning">
+                                        ⭐ <?= number_format($data['avg_rating'], 1); ?>
+                                    </span>
+                                </h5>
+                                <p class="text-muted">
+                                    <?= $data['deskripsi']; ?>
+                                </p>
                             </div>
                         </div>
                     </article>
-
-                    <article class="col-md-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="img/bakpia.jpg" class="card-img-top" alt="Bakpia Pathok 25">
-                            <div class="card-body">
-                                <small class="text-muted">PATHUK</small>
-                                <h5 class="fw-bold">Bakpia Pathok 25 <span class="text-warning">⭐ 4.7</span></h5>
-                                <p class="text-muted">
-                                    Bakpia isi kacang hijau yang lembut dan selalu fresh setiap hari.
-                                </p>
-                                <small class="text-muted">
-                                    <i class="bi bi-bag"></i> Oleh-oleh &nbsp; | &nbsp; Rp. 25.000–50.000
-                                </small>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="col-md-4">
-                        <div class="card border-0 shadow-sm h-100">
-                            <img src="img/pecel.jpg" class="card-img-top" alt="Pecel Mbah Lindu">
-                            <div class="card-body">
-                                <small class="text-muted">BANTUL</small>
-                                <h5 class="fw-bold">Pecel Mbah Lindu <span class="text-warning">⭐ 4.8</span></h5>
-                                <p class="text-muted">
-                                    Pecel legendaris dengan bumbu kacang khas yang diwariskan turun-temurun.
-                                </p>
-                                <small class="text-muted">
-                                    <i class="bi bi-heart"></i> Sehat &nbsp; | &nbsp; Rp. 25.000–50.000
-                                </small>
-                            </div>
-                        </div>
-                    </article>
-
+                    <?php } ?>
                 </div>
             </div>
         </section>
