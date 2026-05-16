@@ -63,7 +63,7 @@
                 <div class="col-6">
                     <label>Konfirmasi</label>
                     <input type="password"
-                           name="password"
+                           name="password_confirm"
                            class="form-control custom-input"
                            placeholder="••••••••"
                            minlength="6"
