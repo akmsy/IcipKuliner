@@ -1,7 +1,7 @@
 <?php
     include 'koneksi.php';
 
-    $id_kuliner = $_GET['id'];
+    $id_kuliner = $_GET['id_kuliner'];
 
     // ambil gambar
     $query = mysqli_query(
