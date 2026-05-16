@@ -53,7 +53,10 @@
             k.*,
             kat.nama_kategori,
             COALESCE(AVG(u.rating), 0) AS avg_rating,
-            COUNT(u.id_ulasan) AS total_ulasan
+            COUNT(u.id_ulasan) AS total_ulasan,
+            u.komentar,
+            u.rating,
+            k.maps
         FROM kuliner k
         JOIN kategori kat 
             ON k.kategori_id = kat.id_kategori
@@ -110,8 +113,151 @@
             </div>
 
             <div class="action-cell">
-                <a href="edit.php?id=<?= $data['id_kuliner'];?>" class="btn btn-success">Edit</a>
-                <a href="hapus.php?id=<?= $data['id_kuliner']; ?>" class="btn btn-warning" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#editModal<?= $data['id_kuliner']; ?>">Edit</button>
+                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#hapusModal<?= $data['id_kuliner']; ?>">Hapus</button>
+            </div>
+
+            <!-- Modal Edit -->
+            <div class="modal fade" id="editModal<?= $data['id_kuliner']; ?>" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <form action="proses_edit.php" method="POST" enctype="multipart/form-data">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Data Kuliner</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="hidden" name="id" value="<?= $data['id_kuliner']; ?>">
+                                <div class="mb-3">
+                                    <label>Nama Tempat</label>
+                                    <input type="text" class="form-control" name="nama_tempat" value="<?= $data['nama_tempat']; ?>" required>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label>Kategori</label>
+                                    <select name="kategori" class="form-select"> <?php
+                                        $kategoriEdit = mysqli_query(
+                                            $koneksi,
+                                            "SELECT * FROM kategori"
+                                        );
+                    
+                                        while($kat=mysqli_fetch_assoc($kategoriEdit)){
+                                        ?>
+                    
+                                        <option value="<?= $kat['id_kategori']; ?>" <?=($kat['id_kategori']==$data['kategori_id'])?'selected':'';?>>
+                                            <?= $kat['nama_kategori']; ?>
+                                        </option>
+                    
+                                        <?php } ?>
+                                    </select>
+                    
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Detail Alamat</label>
+                                    <input type="text" class="form-control" name="detail_alamat" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Kabupaten</label>
+                                    <select class="form-select" name="kabupaten" required>
+                                        <?php
+                                        $kabupaten = mysqli_query(
+                                            $koneksi,
+                                            "SELECT * FROM kabupaten"
+                                        );
+                                        while($kab = mysqli_fetch_assoc($kabupaten)){
+                                        ?>
+                                        <option value="<?= $kab['id_kabupaten']; ?>">
+                                            <?= $kab['nama_kabupaten']; ?>
+                                        </option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+
+                                 <div class="mb-3">
+                                    <label>Kecamatan</label>
+                                    <select class="form-select" name="kecamatan" required>
+                                        <option>Pilih Kecamatan</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Desa</label>
+                                    <select class="form-select" name="desa" required>
+                                        <option>Pilih Desa</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Jam Operasional</label>
+                                    <input type="text" class="form-control" name="jam_operasional" value="<?= $data['jam_operasional']; ?>">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Harga</label>
+                                        <input type="text" class="form-control" name="harga" value="<?= $data['harga']; ?>">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Google Maps</label>
+                                    <input type="text" class="form-control" name="maps" value="<?= $data['maps']; ?>" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Rating</label>
+                                    <select class="form-select" name="rating" required>
+                                        <option value="<?=($data['rating']==1)?'selected':'';?>"><?=($data['rating']==1)?'selected':'';?></option>
+                                        <option value="1">1 ⭐</option>
+                                        <option value="2">2 ⭐⭐</option>
+                                        <option value="3">3 ⭐⭐⭐</option>
+                                        <option value="4">4 ⭐⭐⭐⭐</option>
+                                        <option value="5">5 ⭐⭐⭐⭐⭐</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Review</label>
+                                    <textarea class="form-control" name="review" rows="4" required><?= $data['komentar']; ?></textarea>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label>Gambar Baru</label>
+                                    <input type="file" class="form-control" name="gambar">
+                                    <small>Kosongkan jika tidak ingin mengganti gambar</small>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                                <button type="submit" class="btn btn-success">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal Hapus -->
+            <div class="modal fade"
+                id="hapusModal<?= $data['id_kuliner']; ?>"
+                tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Hapus Data</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"> </button>
+                        </div>
+
+                        <div class="modal-body">Yakin ingin menghapus <b><?= $data['nama_tempat']; ?></b> ?
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                            <a href="proses_hapus.php?id_kuliner=<?= $data['id_kuliner']; ?>" class="btn btn-danger">Hapus</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
          <?php } ?>
