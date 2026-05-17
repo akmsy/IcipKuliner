@@ -112,7 +112,7 @@
                                 <p class="text-muted">
                                     <?= $d['harga']; ?>
                                 </p>
-                                <a href="detail.php?id=<?= $d['id_kuliner']; ?>" 
+                                <a href="detail.php?id_kuliner=<?= $d['id_kuliner']; ?>" 
                                 class="btn btn-orange btn-sm rounded-pill mt-auto">
                                     Lihat Detail
                                 </a>
