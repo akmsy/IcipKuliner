@@ -99,7 +99,7 @@
             </div>
             
             <div class="location-text">
-                <?= $data['lokasi']; ?>,
+                <?= $data['lokasi']; ?>
             </div>
             
             <div>
@@ -154,39 +154,8 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label>Detail Alamat</label>
-                                    <input type="text" class="form-control" name="detail_alamat" required>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label>Kabupaten</label>
-                                    <select class="form-select" name="kabupaten" required>
-                                        <?php
-                                        $kabupaten = mysqli_query(
-                                            $koneksi,
-                                            "SELECT * FROM kabupaten"
-                                        );
-                                        while($kab = mysqli_fetch_assoc($kabupaten)){
-                                        ?>
-                                        <option value="<?= $kab['id_kabupaten']; ?>">
-                                            <?= $kab['nama_kabupaten']; ?>
-                                        </option>
-                                        <?php } ?>
-                                    </select>
-                                </div>
-
-                                 <div class="mb-3">
-                                    <label>Kecamatan</label>
-                                    <select class="form-select" name="kecamatan" required>
-                                        <option>Pilih Kecamatan</option>
-                                    </select>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label>Desa</label>
-                                    <select class="form-select" name="desa" required>
-                                        <option>Pilih Desa</option>
-                                    </select>
+                                    <label>Lokasi</label>
+                                    <input type="text" class="form-control" name="lokasi" value="<?= $data['lokasi']; ?>" required>
                                 </div>
 
                                 <div class="mb-3">
@@ -207,12 +176,11 @@
                                 <div class="mb-3">
                                     <label>Rating</label>
                                     <select class="form-select" name="rating" required>
-                                        <option value="<?=($data['rating']==1)?'selected':'';?>"><?=($data['rating']==1)?'selected':'';?></option>
-                                        <option value="1">1 ⭐</option>
-                                        <option value="2">2 ⭐⭐</option>
-                                        <option value="3">3 ⭐⭐⭐</option>
-                                        <option value="4">4 ⭐⭐⭐⭐</option>
-                                        <option value="5">5 ⭐⭐⭐⭐⭐</option>
+                                        <option value="1" <?=($data['rating']==1)?'selected':'';?>>1 ⭐</option>
+                                        <option value="2" <?=($data['rating']==2)?'selected':'';?>>2 ⭐⭐</option>
+                                        <option value="3" <?=($data['rating']==3)?'selected':'';?>>3 ⭐⭐⭐</option>
+                                        <option value="4" <?=($data['rating']==4)?'selected':'';?>>4 ⭐⭐⭐⭐</option>
+                                        <option value="5" <?=($data['rating']==5)?'selected':'';?>>5 ⭐⭐⭐⭐⭐</option>
                                     </select>
                                 </div>
 
@@ -237,6 +205,29 @@
                 </div>
             </div>
 
+            <!-- Modal Edit Succes -->
+            <?php if (isset($_GET['edit']) && $_GET['edit'] == 'success') { ?>
+                <div class="modal fade" id="editSuccessModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Edit Berhasil</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Rekomendasi berhasil diedit!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="contribute.php" class="btn btn-primary">OK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <script>
+                const modal = new bootstrap.Modal(document.getElementById('editSuccessModal'));
+                modal.show();
+            </script>
+            <?php } ?>
 
             <!-- Modal Hapus -->
             <div class="modal fade"
