@@ -4,10 +4,11 @@ include 'koneksi.php';
 
 $id = (int) ($_GET['id_kuliner'] ?? 0);
 $query = mysqli_query($koneksi, "
-    SELECT k.*, kat.nama_kategori, u.username
+    SELECT k.*, kat.nama_kategori, u.username, ul.rating
     FROM kuliner k
     JOIN kategori kat ON k.kategori_id = kat.id_kategori
     JOIN users u ON k.user_id = u.id
+    LEFT JOIN ulasan ul ON k.id_kuliner = ul.kuliner_id
     WHERE k.id_kuliner = $id
 ");
 
@@ -45,6 +46,21 @@ $k = mysqli_fetch_assoc($query);
                     <?= $k['nama_kategori']; ?>
                 </span>
                 <h2 class="mt-2"><?= $k['nama_tempat']; ?></h2>
+                <div class="mt-2">
+                    <?php
+                    $rating = (float) $k['rating'];
+                    for ($i = 1; $i <= 5; $i++) {
+                        if ($i <= floor($rating)) {
+                            echo '<i class="bi bi-star-fill text-warning"></i>';
+                        } elseif ($i - 0.5 <= $rating) {
+                            echo '<i class="bi bi-star-half text-warning"></i>';
+                        } else {
+                            echo '<i class="bi bi-star text-warning"></i>';
+                        }
+                    }
+                    ?>
+                    <span class="ms-2"><?= $rating ?>/5</span>
+                </div>
                 <p><i class="bi bi-geo-alt"></i> <?= $k['lokasi']; ?></p>
                 <small>Dibuat oleh <b><?= $k['username']; ?></b></small>
                 <?php if (!empty($k['maps'])) { ?>
