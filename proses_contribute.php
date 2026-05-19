@@ -107,7 +107,7 @@
     );
 
     if($queryKuliner && $queryUlasan){
-        header("Location: contribute.php");
+        header("Location: contribute.php?tambah=success");
         exit;
     }else{
         echo "Contribution gagal";

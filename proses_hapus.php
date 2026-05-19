@@ -33,7 +33,7 @@
     );
 
     if($queryKuliner){
-        header("Location: contribute.php");
+        header("Location: contribute.php?hapus=success");
         exit;
     }else{
         echo "Gagal menghapus";

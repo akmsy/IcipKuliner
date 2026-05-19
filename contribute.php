@@ -253,6 +253,31 @@
         </div>
          <?php } ?>
 
+        <!-- Modal Hapus Succes -->
+            <?php if (isset($_GET['hapus']) && $_GET['hapus'] == 'success') { ?>
+                <div class="modal fade" id="hapusSuccessModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Hapus Berhasil</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Rekomendasi berhasil dihapus!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="contribute.php" class="btn btn-primary">OK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                const hapusModal = new bootstrap.Modal(document.getElementById('hapusSuccessModal'));
+                hapusModal.show();
+            </script>
+            <?php } ?>
+
+
         <!-- Page -->
         <div class="table-page">
             <p>Menampilkan <?= $total_data; ?> tempat kuliner</p>
@@ -452,6 +477,30 @@
             </form>
         </section>
     </section>
+
+    <!-- Modal Tambah Succes -->
+            <?php if (isset($_GET['tambah']) && $_GET['tambah'] == 'success') { ?>
+                <div class="modal fade" id="tambahSuccessModal" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Tambah Berhasil</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Rekomendasi berhasil ditambah!</p>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="contribute.php" class="btn btn-primary">OK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                const tambahModal = new bootstrap.Modal(document.getElementById('tambahSuccessModal'));
+                tambahModal.show();
+            </script>
+            <?php } ?>
 
 </main>
 
